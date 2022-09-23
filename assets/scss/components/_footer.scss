@@ -1,0 +1,48 @@
+.contact {
+  @extend .skills;
+  background-color: $main-bg;
+  color: $white;
+  &__wrp {
+    border-radius: 18.3333px;
+    background-color: $common-color;
+    @include flexbox(center, center);
+    flex-direction: column;
+    padding: 20px;
+    &__label {
+      @include fontstyle(40px, 52px, 600);
+      margin-bottom: 23px;
+    }
+    &__inp {
+      width: 100%;
+      border: 0.0873016px solid #ffffff;
+      box-shadow: -3.49206px -3.49206px 4.36508px rgba(255, 255, 255, 0.05),
+        3.49206px 3.49206px 8.73016px rgba(0, 0, 0, 0.25),
+        inset -3.49206px -3.49206px 6.11111px rgba(255, 255, 255, 0.45),
+        inset 3.49206px 3.49206px 6.11111px rgba(0, 0, 0, 0.25);
+      border-radius: 6.98413px;
+      padding: 17.46px;
+      margin-bottom: 22.7px;
+
+      &:last-child {
+        margin-bottom: 0;
+        height: 100px;
+      }
+    }
+  }
+  .extra {
+    @include flexbox(flex-start, center);
+    flex-direction: column;
+  }
+  &__info {
+    @include flexbox(center, center);
+    margin-top: 25.27px;
+    &__detail {
+      @include fontstyle(24px, 109.5%, 600);
+      color: $main-font-color;
+      margin-left: 17px;
+      @include underMobileOnly() {
+        font-size: 12px;
+      }
+    }
+  }
+}

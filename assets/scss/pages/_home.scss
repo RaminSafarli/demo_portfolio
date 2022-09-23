@@ -1,0 +1,249 @@
+.services {
+  padding: 46px 0 46px 0;
+  & h2 {
+    margin-bottom: 25.26px;
+  }
+  &__service-content {
+    @include flexbox(center, flex-start);
+    border: 1px solid #f0f0f0;
+    box-shadow: 30px 14px 109px rgba(0, 0, 0, 0.07);
+    border-radius: 21px;
+    padding: 59.21px 115px 45px 45px;
+    margin-bottom: 24px;
+    -webkit-transition: 0.3s all ease;
+    -o-transition: 0.3s all ease;
+    transition: 0.3s all ease;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &__text-wrp {
+      @include flexbox(flex-start, center);
+      flex-direction: column;
+      margin-left: 30px;
+      &__name {
+        @include fontstyle(44px, 57px, 600);
+        @include underMobileOnly() {
+          font-size: 35px !important;
+        }
+      }
+      &__number {
+        @include fontstyle(24px, 58px, 500);
+      }
+    }
+
+    &:hover {
+      color: $white;
+      background-color: $common-color;
+    }
+  }
+  &__info {
+    padding: 70.23px 0 70.23px 117px;
+    @include lg() {
+      padding-left: 30px;
+    }
+    @include afterLg() {
+      padding-left: 0;
+    }
+    &__header {
+      margin-bottom: 7.05px;
+    }
+    &__text {
+      @include fontstyle(24px, 58px, 500);
+    }
+    &__stat {
+      @include flexbox(center, space-between);
+      & .toCenter {
+        display: block;
+
+        @include afterLg() {
+          display: inline-block;
+        }
+      }
+      &__project {
+        @include flexbox(flex-start, center);
+        flex-direction: column;
+        &__number {
+          @include fontstyle(84.2045px, 109px, 700);
+        }
+        &__text {
+          @include fontstyle(24px, 58px, 500);
+        }
+      }
+    }
+  }
+}
+
+.about {
+  @extend .services;
+  background-color: $main-bg;
+  &__header {
+    margin-bottom: 28.3px;
+  }
+  &__text {
+    padding: 20.7px 34.34px 29.88px 38.15px;
+    background-color: $common-color;
+    color: $white;
+    border-radius: 8px;
+    text-align: center;
+    @include fontstyle(24px, 36px, 500);
+    margin-bottom: 50.12px;
+  }
+  &__btn-wrp {
+    &__btn {
+      @include buttonStyle(
+        14px,
+        40px,
+        2px,
+        solid,
+        $main-font-color,
+        $main-font-color,
+        138px
+      );
+      margin-right: 58px;
+      &:last-child {
+        margin-right: 0;
+      }
+      @include afterLg() {
+        margin-top: 10px;
+      }
+      &:hover {
+        background-color: $main-font-color;
+        color: $white;
+        -webkit-transition: 0.3s all ease;
+        -o-transition: 0.3s all ease;
+        transition: 0.3s all ease;
+      }
+    }
+  }
+}
+
+.skills {
+  @extend .services;
+  text-align: center;
+  &__subheader {
+    font-weight: 300 !important;
+    color: $extra-font-color;
+  }
+  &__content {
+    margin-top: 40px;
+    margin-bottom: 77px;
+    &__skill {
+      &__info {
+        @include flexbox(center, space-between);
+        @include fontstyle(24px, 241%, 600);
+        &__rate {
+          font-weight: 700 !important;
+        }
+      }
+      &__bar {
+        position: relative;
+        border: 2px solid $main-font-color;
+        border-radius: 10px;
+        padding: 5px;
+        // &::after {
+        //   content: "";
+        //   position: absolute;
+        //   background-color: $extra-font-color;
+        //   top: 0;
+        //   left: 0;
+        //   width: 50%;
+        // }
+        &__inside {
+          // width: 50%;
+          background-color: $extra-font-color;
+          height: 12px;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+}
+
+.clients {
+  @extend .skills;
+  background-color: $main-bg;
+  &__subheader {
+    @extend .skills__subheader;
+    margin-bottom: 88px;
+  }
+  &__swipper {
+    &__content {
+      padding: 12px;
+      background-color: $white;
+      border: 1px solid $common-color;
+      box-shadow: 30px 14px 109px rgba(0, 0, 0, 0.07);
+      border-radius: 21px;
+      &__img-wrp {
+        margin-bottom: 51px;
+      }
+      &__text {
+        @include fontstyle(20px, 149.5%, 400);
+        color: $common-color;
+      }
+      &__bottom {
+        @include flexbox(center, center);
+        margin-top: 45px;
+        &__img {
+          margin-right: 19px;
+        }
+        &__info {
+          text-align: left;
+          &__name {
+            display: block;
+            @include fontstyle(28.1544px, 37px, 600);
+            color: $main-font-color;
+          }
+          &__position {
+            display: block;
+            @include fontstyle(15.3569px, 37px, 500);
+            color: $extra-font-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+.hire {
+  @extend .skills;
+  background-color: $common-color;
+  color: $white;
+  &__text {
+    @include fontstyle(24px, 36px, 500);
+    margin-bottom: 20px;
+  }
+  &__btn-wrp {
+    &__button {
+      @include buttonStyle(
+        11px,
+        10px,
+        1px,
+        solid,
+        $main-font-color,
+        $common-color,
+        5px
+      );
+      font-family: $first-font;
+
+      -webkit-transition: 0.3s all ease;
+      -o-transition: 0.3s all ease;
+      transition: 0.3s all ease;
+      &:hover {
+        background-color: $main-font-color;
+        color: $white;
+      }
+    }
+  }
+}
+
+@include underMobileOnly {
+  h1 {
+    font-size: 50px;
+  }
+  h2 {
+    font-size: 40px;
+  }
+  h3 {
+    font-size: 28px;
+  }
+}

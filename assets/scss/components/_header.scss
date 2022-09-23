@@ -1,0 +1,117 @@
+.top {
+  padding: 44px 0 44px 0;
+  &__wrp {
+    @include flexbox(center, space-between);
+    &__logo {
+    }
+    &__nav {
+      &__list {
+        @include ulistStyle();
+        &__list-item {
+          margin-right: 46px;
+          &:last-child {
+            margin-right: 0;
+          }
+          &__link {
+            padding: 0 10px 0 10px;
+            text-transform: uppercase;
+            font-family: $second-font;
+            @include fontstyle(24.7913px, 26px, 700);
+            border: 1px solid transparent;
+            border-radius: 50%;
+            &:hover {
+              border-right: 1px solid $common-color;
+              border-left: 1px solid $common-color;
+
+              // border-top-left-radius: 50%;
+              // border-top-right-radius: 50%;
+              // border-bottom-right-radius: 50%;
+              // border-bottom-left-radius: 50%;
+            }
+          }
+        }
+      }
+    }
+    &__mobile {
+      position: fixed;
+      top: 0;
+      right: 0;
+      background-color: $main-font-color;
+      height: 100vh;
+      width: 75%;
+      transform: translateX(100%);
+      transition: 0.8s all cubic-bezier(0.23, 1, 0.32, 1);
+      overflow-y: scroll;
+      z-index: 9999;
+      &__content {
+        padding-left: 48.14px;
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+        &__btn {
+          padding: 38px 31px 102.35px 0;
+          @include flexbox(center, right);
+        }
+        &__list {
+          @include ulistStyle(column);
+          &__list-item {
+            margin-bottom: 85.49px;
+            &:last-child {
+              margin-bottom: 0;
+            }
+            &__link {
+              @extend .top__wrp__nav__list__list-item__link;
+              color: $white;
+            }
+          }
+        }
+      }
+      &.show {
+        transform: translateX(0);
+      }
+    }
+  }
+}
+
+.main {
+  margin-top: 28px;
+  &__wrp {
+    &__content {
+      &__header {
+        font-family: $second-font;
+        font-weight: 400;
+        letter-spacing: 1px;
+        & > span {
+          font-weight: 700;
+          // font-family: $first-font;
+        }
+      }
+      &__link {
+        margin-top: 27px;
+        color: $extra-font-color;
+        @include fontstyle(24px, 31px, 400);
+        display: inline-block;
+        @include underMobileOnly() {
+          font-size: 17px;
+        }
+      }
+      &__bottom {
+        text-transform: uppercase;
+        @include flexbox(center, flex-start);
+        margin-top: 207px;
+        &__year {
+          @include fontstyle(84.2045px, 109px, 700);
+          margin-right: 12px;
+        }
+        &__text {
+          @include fontstyle(24px, 31px, 400);
+          color: $extra-font-color;
+          @include flexbox(flex-start, center);
+          flex-direction: column;
+          margin-top: 10px;
+          & span {
+          }
+        }
+      }
+    }
+  }
+}
